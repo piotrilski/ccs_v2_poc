@@ -35,9 +35,9 @@
     <!-- Add your site or application content here -->
 
   <div id="header" class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-header">
+      <!-- <div class="navbar-header">
         
-      </div>
+      </div> -->
       <nav class="collapse navbar-collapse">
         <div data-ng-include="'/views/menu.html'"/>
       </nav>
@@ -45,11 +45,7 @@
   <div id="wrapper">
     <div id="sidebar-wrapper" class="col-md-1">
        <div id="sidebar">
-          <ul class="nav list-group">
-            <li>
-              <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 1</a>
-            </li>
-          </ul>
+          <div data-ui-view="leftView"></div>            
        </div>
     </div>
     <div id="main-wrapper" class="col-md-11 pull-right">
@@ -89,6 +85,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-grid/build/ng-grid.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -98,6 +95,10 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/menu.js"></script>
         <script src="scripts/controllers/products.js"></script>
+        <script src="scripts/controllers/leftmenu.js"></script>
+        <script src="scripts/controllers/productsinf.js"></script>
+        <script src="scripts/controllers/productsgrid.js"></script>
+        <script src="scripts/services/product.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -16,32 +16,53 @@ angular
 		'ngRoute',
 		'ngSanitize',
 		'ngGrid',
-		'ui.router'
+		'ui.router',
+		'ui.scroll',
+		'ccsV2App.services'
 	])
-	.config(function ($stateProvider) {
-		$stateProvider
-			.state('index', {
-				url: '/',
-				views: {
-					'mainView' : { templateUrl: 'views/main.html', controller: 'MainCtrl'}
-				}
-			})
-			.state('about', {
-				url: '/about',
-				views: {
-					'mainView' : { templateUrl: 'views/about.html', controller: 'AboutCtrl'}
-				}
-			})
-			.state('contact', {
-				url: '/contact',
-				views: {
-					'mainView' : { templateUrl: 'views/contact.html'}
-				}
-			})
-			.state('products', {
-				url: '/products',
-				views: {
-					'mainView' : {templateUrl: 'views/products.html', controller: 'ProductsCtrl'}
-				}
-			});
-	});
+	.config([
+		'$stateProvider', 
+		'$urlRouterProvider',
+		function ($stateProvider, $urlRouterProvider) {
+		
+			$urlRouterProvider.otherwise('index');
+
+			$stateProvider
+				.state('index', {
+					url: '/',
+					views: {
+						'mainView' : { templateUrl: 'views/main.html', controller: 'MainCtrl'},
+						'leftView' : {templateUrl: 'views/leftmenu.html', controller: 'LeftmenuCtrl'}
+					}
+				})
+				.state('about', {
+					url: '/about',
+					views: {
+						'mainView' : { templateUrl: 'views/about.html', controller: 'AboutCtrl'}
+					}
+				})
+				.state('contact', {
+					url: '/contact',
+					views: {
+						'mainView' : { templateUrl: 'views/contact.html'}
+					}
+				})
+				.state('products', {
+					url: '/products',
+					views: {
+						'mainView' : {templateUrl: 'views/products.html', controller: 'ProductsCtrl'},
+						'leftView' : {templateUrl: 'views/leftmenu.html', controller: 'LeftmenuCtrl'}
+					}
+				})
+				.state('products.grid', {
+					url: '/grid',
+					templateUrl: 'views/productsgrid.html', 
+					controller: 'ProductsgridCtrl'
+				})
+				.state('products.inf', {
+					url: '/inf',
+					templateUrl: 'views/productsinf.html', 
+					controller: 'ProductsinfCtrl'
+				});
+		}
+	]);
