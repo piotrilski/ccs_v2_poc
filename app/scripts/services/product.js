@@ -26,6 +26,14 @@ angular.module('ccsV2App.services', [])
 			};
 			
 			return {
-				get: loadData
+				get: function(index, count, success) {
+					var from = index >0 ? index-1 : 0;
+					var to = count + index >=0 ? count+index : index;
+					
+					loadData().then(function(data) {
+						success(data.slice(from, to));
+					});
+				},
+				getAll: loadData,				
 			};
 	}]);

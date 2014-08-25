@@ -1,8 +1,9 @@
 <h1>Infinitive scroll</h1>
 <p>All products: {{products.length}}</p>
 
-<div data-ui-scroll-viewport style="height:300px; border: 1px solid;">
-	<div data-ui-scroll="prod in products">
+<div data-ng-scroll-viewport style="height:300px; border: 1px solid;">
+	<div data-ng-scroll="prod in productService"
+		 data-buffer-size="50">
 		{{$index + ' ' + prod}}
 	</div>
 </div>

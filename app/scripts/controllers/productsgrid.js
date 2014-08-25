@@ -16,7 +16,7 @@ angular.module('ccsV2App')
 		function ($scope, $http, productService) {
 
 			var loadData = function() {				
-				productService.get().then(function(prods) {					
+				productService.getAll().then(function(prods) {					
 					$scope.products = prods;
 				});
 			};
@@ -24,7 +24,8 @@ angular.module('ccsV2App')
 			var init = function() {
 				$scope.products = [];
 				$scope.gridOptions = {
-					data:'products'
+					data:'products',
+					enablePinning: true
 				};
 			};
 

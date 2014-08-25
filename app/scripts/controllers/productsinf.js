@@ -11,7 +11,7 @@
 angular.module('ccsV2App')
 	.controller('ProductsinfCtrl', ['$scope', '$http', 'productService', function ($scope, $http, productService) {
 		var loadData = function() {
-			productService.get().then(function(prods){
+			productService.getAll().then(function(prods){
 				$scope.products = prods;
 			});
 		};
