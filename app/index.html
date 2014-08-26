@@ -34,13 +34,15 @@
 
     <!-- Add your site or application content here -->
 
-  <div id="header" class="navbar navbar-default navbar-fixed-top">
+  <div id="header" data-ng-include="'/views/menu.html'">
       <!-- <div class="navbar-header">
         
       </div> -->
-      <nav class="collapse navbar-collapse">
+      <!-- <nav class="collapse navbar-collapse">
+      
         <div data-ng-include="'/views/menu.html'"/>
-      </nav>
+      
+      </nav> -->
   </div>
   <div id="wrapper">
     <div id="sidebar-wrapper" class="col-md-1">
@@ -62,6 +64,10 @@
       document.createElement('ng-view');
       document.createElement('ng-cloak');
       document.createElement('ng-grid');
+      document.createElement('ui-view');
+      document.createElement('ui-sref');
+      document.createElement('ng-scroll-viewport');
+      document.createElement('ng-scroll');
     </script>
     <![endif]-->
 
@@ -74,7 +80,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -86,6 +92,7 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-grid/build/ng-grid.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/respondJs/dest/respond.src.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

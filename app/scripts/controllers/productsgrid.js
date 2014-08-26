@@ -25,7 +25,13 @@ angular.module('ccsV2App')
 				$scope.products = [];
 				$scope.gridOptions = {
 					data:'products',
-					enablePinning: true
+					showGroupPanel: true,    			
+					columnDefs: [
+						{field:'0', displayName:'name'},
+						{field:'1', displayName:'second name'},
+						{field:'2', displayName:'adress'},
+						{field:'3', displayName:'country'}
+					]
 				};
 			};
 
