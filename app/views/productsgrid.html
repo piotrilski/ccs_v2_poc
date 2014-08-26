@@ -1,8 +1,9 @@
 <h1>Grid</h1>
-<p>Products: {{products.length}}</p>
 <div>
-	<div class="gridStyle" data-ng-grid="gridOptions"></div>
-	<div>
-		<p>Selected Row: {{selectedRow}}</p>
-	</div>
+	<p><strong>Products:</strong> {{products.length}}</p>
+	<p><strong>Search for:</strong><input type="text" ng-model="filterText"/></p>
+	<p><strong>Selected Row:</strong> {{selectedRow}}</p>
+</div>
+<div>
+	<div class="gridStyle" data-ng-grid="gridOptions"></div>	
 </div>

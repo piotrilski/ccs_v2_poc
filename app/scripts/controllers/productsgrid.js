@@ -21,14 +21,10 @@ angular.module('ccsV2App')
 				});
 			};
 
-			$scope.filterOptions = {
-				filterText: '',
-				useExternalFilter: true
-			};
 			$scope.totalServerItems = 0;
 			$scope.pagingOptions = {
-				pageSizes: [10, 20, 50],
-				pageSize: 20,
+				pageSizes: [50,100,1000],
+				pageSize: 50,
 				currentPage: 1
 			};
 
@@ -66,25 +62,27 @@ angular.module('ccsV2App')
 				if (newVal !== oldVal && 
 					(newVal.currentPage !== oldVal.currentPage ||
 					newVal.pageSize !== oldVal.pageSize)) {
-					$scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+					$scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterText);
 				}
 			}, true);
-			$scope.$watch('filterOptions', function (newVal, oldVal) {
+			$scope.$watch('filterText', function (newVal, oldVal) {
 				if (newVal !== oldVal) {
-					$scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+					$scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterText);
 				}
 			}, true);
 			
 			var init = function() {
-				
+				$scope.filterText = '';
 				$scope.products = [];
 				$scope.selectedRow = [];
 				$scope.gridOptions = {
 					data:'myData',
 					showGroupPanel: true,
 					enablePaging: true,
+					enableSorting:true,
 					showFooter: true,
 					multiSelect: false,
+					showFilter:false,
 					selectedItems: $scope.selectedRow,
 					columnDefs: [						
 						{field:'0', displayName:'name'},
@@ -93,8 +91,7 @@ angular.module('ccsV2App')
 						{field:'3', displayName:'country'}
 					],
 					totalServerItems:'totalServerItems',
-					pagingOptions: $scope.pagingOptions,
-					filterOptions: $scope.filterOptions
+					pagingOptions: $scope.pagingOptions					
 				};
 
 
