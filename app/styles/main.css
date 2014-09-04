@@ -42,9 +42,16 @@ body {
 }
 
 .gridStyle {
-	border: 1px solid rgb(212,212,212);
+/*	border: 1px solid rgb(212,212,212);
 	width: 700px !important; 
-	height: 300px !important;
+	height: 300px !important;*/
+	width: 100%;
+    border-collapse: collapse;
+    position: relative;
+}
+
+.ngHeaderScroller{
+/*   position:fixed;*/
 }
 
 @media (max-width: 992px) {

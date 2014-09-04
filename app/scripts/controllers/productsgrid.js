@@ -23,8 +23,8 @@ angular.module('ccsV2App')
 
 			$scope.totalServerItems = 0;
 			$scope.pagingOptions = {
-				pageSizes: [50,100,1000],
-				pageSize: 50,
+				pageSizes: [20,100,1000],
+				pageSize: 20,
 				currentPage: 1
 			};
 
@@ -83,6 +83,7 @@ angular.module('ccsV2App')
 					showFooter: true,
 					multiSelect: false,
 					showFilter:false,
+					plugins: [new ngGridFlexibleHeightPlugin()],
 					selectedItems: $scope.selectedRow,
 					columnDefs: [						
 						{field:'0', displayName:'name'},
