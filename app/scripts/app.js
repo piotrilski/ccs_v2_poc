@@ -31,7 +31,7 @@ angular
 				.state('index', {
 					url: '/',
 					views: {
-						'mainView' : { templateUrl: 'views/main.html', controller: 'MainCtrl'},
+						'mainView' : { templateUrl: 'views/productsgrid.html', controller: 'ProductsgridCtrl'},
 						'leftView' : {templateUrl: 'views/leftmenu.html', controller: 'LeftmenuCtrl'}
 					}
 				})

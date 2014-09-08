@@ -83,7 +83,7 @@ angular.module('ccsV2App')
 					showFooter: true,
 					multiSelect: false,
 					showFilter:false,
-					plugins: [new ngGridFlexibleHeightPlugin()],
+					/*plugins: [new ngGridFlexibleHeightPlugin()],*/
 					selectedItems: $scope.selectedRow,
 					columnDefs: [						
 						{field:'0', displayName:'name'},

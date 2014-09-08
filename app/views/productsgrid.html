@@ -1,9 +1,11 @@
-<h1>Grid</h1>
-<div>
-	<p><strong>Products:</strong> {{products.length}}</p>
-	<p><strong>Search for:</strong><input type="text" ng-model="filterText"/></p>
-	<p><strong>Selected Row:</strong> {{selectedRow}}</p>
-</div>
-<div>
-	<div class="gridStyle" data-ng-grid="gridOptions"></div>	
+<div style="background-color: blue; height:100%;">
+	<h1>Grid</h1>
+	<div>
+		<p><strong>Products:</strong> {{products.length}}</p>
+		<p><strong>Search for:</strong><input type="text" ng-model="filterText"/></p>
+		<p><strong>Selected Row:</strong> {{selectedRow}}</p>
+	</div>
+	<div class="gridContainer">
+		<div class="gridStyle" data-ng-grid="gridOptions"></div>	
+	</div>
 </div>

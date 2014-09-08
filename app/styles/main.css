@@ -41,17 +41,43 @@ body {
 		border-top: 0;
 }
 
-.gridStyle {
-/*	border: 1px solid rgb(212,212,212);
+/*.gridStyle {
+	border: 1px solid rgb(212,212,212);
 	width: 700px !important; 
-	height: 300px !important;*/
+	height: 300px !important;
 	width: 100%;
-    border-collapse: collapse;
-    position: relative;
+	border-collapse: collapse;
+	position: relative;    
+}*/
+
+.gridContainer {	
+	height:100%;
+}
+
+.gridStyle {
+	border: 1px solid rgb(212,212,212);
+	height: 100% !important;
+	padding-bottom: 120px;	
+	
+	overflow: hidden;
+}
+
+.ngViewport.ng-scope {
+	height: 100% !important;
+	width: 100% !important;
+	overflow-x: hidden;
+}
+
+.ngViewport.ng-scope > .ngCanvas {
+	width: 100% !important;
+}
+
+.ngFooterPanel{
+	
 }
 
 .ngHeaderScroller{
-/*   position:fixed;*/
+	
 }
 
 @media (max-width: 992px) {
